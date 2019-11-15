@@ -1,0 +1,501 @@
+﻿<Window x:Class="WpfApp1.Window12"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="Window12" Height="450" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
+
+    <Window.Resources>
+
+
+
+        <SolidColorBrush x:Key="MyFillBrush" Color="#FFE63E3E " />
+        <SolidColorBrush x:Key="MyFillBrush1" Color="#FFE63E3E" />
+        <SolidColorBrush x:Key="MyFillBrush2" Color="#FFE63E3E" />
+        <SolidColorBrush x:Key="MyFillBrush3" Color="#FFE63E3E" />
+        <SolidColorBrush x:Key="MyFillBrush4" Color="#FFE63E3E" />
+
+        <Style x:Key="MyShapeStyle" TargetType="Shape">
+            <Setter Property="Fill" Value="{DynamicResource MyFillBrush}" />
+        </Style>
+
+        <Style x:Key="SliderThumbStyle" TargetType="Thumb">
+            <Setter Property="SnapsToDevicePixels" Value="true"/>
+            <Setter Property="OverridesDefaultStyle" Value="false"/>
+            <Setter Property="Height" Value="18"/>
+            <Setter Property="Width" Value="18"/>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Thumb">
+
+                        <Rectangle Style="{StaticResource MyShapeStyle}" Width="Auto"
+                          Stroke="Black"
+                          StrokeThickness="1.1"
+                          Name="Ellipse" 
+                          Margin="-17.5,0,-17.5,0"
+                        />
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="Ellipse" Property="Fill" Value="#FF42BD9C"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter TargetName="Ellipse" Property="Fill" Value="Gray"/>
+                            </Trigger>
+
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="Slider" x:Key="AppSliderStyle">
+            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Slider">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="auto" Name="row" />
+                                <RowDefinition Height="auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto" />
+                                <ColumnDefinition Width="*" Name="column" />
+                                <ColumnDefinition Width="auto" />
+                            </Grid.ColumnDefinitions>
+                            <Border Name="PART_Border"
+                           BorderBrush="Black" BorderThickness="1"
+                           Padding="2"
+                          Grid.Row="1" Grid.Column="1"
+                           Width="{TemplateBinding Width}"
+                           Height="{TemplateBinding Height}"
+                           Background="#FFEFF1EB"
+                           HorizontalAlignment="Stretch"
+                           VerticalAlignment="Center" />
+
+                            <Track Name="PART_Track"
+                              HorizontalAlignment="Stretch"
+                              VerticalAlignment="Center"
+                              Grid.Row="1" Grid.Column="1"
+                              Width="{TemplateBinding Width}"
+                              Height="{TemplateBinding Height}">
+                                <Track.Thumb>
+                                    <Thumb Style="{StaticResource SliderThumbStyle}" />
+                                </Track.Thumb>
+                            </Track>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- //// -->
+        <Style x:Key="MyShapeStyle1" TargetType="Shape">
+            <Setter Property="Fill" Value="{DynamicResource MyFillBrush1}" />
+        </Style>
+
+        <Style x:Key="SliderThumbStyle1" TargetType="Thumb">
+            <Setter Property="SnapsToDevicePixels" Value="true"/>
+            <Setter Property="OverridesDefaultStyle" Value="false"/>
+            <Setter Property="Height" Value="18"/>
+            <Setter Property="Width" Value="18"/>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Thumb">
+
+                        <Rectangle Style="{StaticResource MyShapeStyle1}" Width="Auto"
+                          Stroke="Black"
+                          StrokeThickness="1.1"
+                          Name="Ellipse" 
+                          Margin="-17.5,0,-17.5,0"
+                        />
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="Ellipse" Property="Fill" Value="#FF42BD9C"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter TargetName="Ellipse" Property="Fill" Value="Gray"/>
+                            </Trigger>
+
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="Slider" x:Key="AppSliderStyle1">
+            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Slider">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="auto" Name="row" />
+                                <RowDefinition Height="auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto" />
+                                <ColumnDefinition Width="*" Name="column" />
+                                <ColumnDefinition Width="auto" />
+                            </Grid.ColumnDefinitions>
+                            <Border Name="PART_Border"
+                           BorderBrush="Black" BorderThickness="1"
+                           Padding="2"
+                          Grid.Row="1" Grid.Column="1"
+                           Width="{TemplateBinding Width}"
+                           Height="{TemplateBinding Height}"
+                           Background="#FFEFF1EB"
+                           HorizontalAlignment="Stretch"
+                           VerticalAlignment="Center" />
+
+                            <Track Name="PART_Track"
+                              HorizontalAlignment="Stretch"
+                              VerticalAlignment="Center"
+                              Grid.Row="1" Grid.Column="1"
+                              Width="{TemplateBinding Width}"
+                              Height="{TemplateBinding Height}">
+                                <Track.Thumb>
+                                    <Thumb Style="{StaticResource SliderThumbStyle1}" />
+                                </Track.Thumb>
+                            </Track>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!-- //// -->
+        <Style x:Key="MyShapeStyle2" TargetType="Shape">
+            <Setter Property="Fill" Value="{DynamicResource MyFillBrush2}" />
+        </Style>
+
+        <Style x:Key="SliderThumbStyle2" TargetType="Thumb">
+            <Setter Property="SnapsToDevicePixels" Value="true"/>
+            <Setter Property="OverridesDefaultStyle" Value="false"/>
+            <Setter Property="Height" Value="18"/>
+            <Setter Property="Width" Value="18"/>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Thumb">
+
+                        <Rectangle Style="{StaticResource MyShapeStyle2}" Width="Auto"
+                          Stroke="Black"
+                        StrokeThickness="1.1"
+                          Name="Ellipse" 
+                          Margin="-17.5,0,-17.5,0"
+                        />
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="Ellipse" Property="Fill" Value="#FF42BD9C"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter TargetName="Ellipse" Property="Fill" Value="Gray"/>
+                            </Trigger>
+
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="Slider" x:Key="AppSliderStyle2">
+            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Slider">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="auto" Name="row" />
+                                <RowDefinition Height="auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto" />
+                                <ColumnDefinition Width="*" Name="column" />
+                                <ColumnDefinition Width="auto" />
+                            </Grid.ColumnDefinitions>
+                            <Border Name="PART_Border"
+                           BorderBrush="Black" BorderThickness="1"
+                           Padding="2"
+                          Grid.Row="1" Grid.Column="1"
+                           Width="{TemplateBinding Width}"
+                           Height="{TemplateBinding Height}"
+                           Background="#FFEFF1EB"
+                           HorizontalAlignment="Stretch"
+                           VerticalAlignment="Center" />
+
+                            <Track Name="PART_Track"
+                              HorizontalAlignment="Stretch"
+                              VerticalAlignment="Center"
+                              Grid.Row="1" Grid.Column="1"
+                              Width="{TemplateBinding Width}"
+                              Height="{TemplateBinding Height}">
+                                <Track.Thumb>
+                                    <Thumb Style="{StaticResource SliderThumbStyle2}" />
+                                </Track.Thumb>
+                            </Track>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- //// -->
+        <Style x:Key="MyShapeStyle3" TargetType="Shape">
+            <Setter Property="Fill" Value="{DynamicResource MyFillBrush3}" />
+        </Style>
+
+        <Style x:Key="SliderThumbStyle3" TargetType="Thumb">
+            <Setter Property="SnapsToDevicePixels" Value="true"/>
+            <Setter Property="OverridesDefaultStyle" Value="false"/>
+            <Setter Property="Height" Value="18"/>
+            <Setter Property="Width" Value="18"/>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Thumb">
+
+                        <Rectangle Style="{StaticResource MyShapeStyle3}" Width="Auto"
+                          Stroke="Black"
+                          StrokeThickness="1.1"
+                          Name="Ellipse" 
+                          Margin="-17.5,0,-17.5,0"
+                        />
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="Ellipse" Property="Fill" Value="#FF42BD9C"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter TargetName="Ellipse" Property="Fill" Value="Gray"/>
+                            </Trigger>
+
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="Slider" x:Key="AppSliderStyle3">
+            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Slider">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="auto" Name="row" />
+                                <RowDefinition Height="auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto" />
+                                <ColumnDefinition Width="*" Name="column" />
+                                <ColumnDefinition Width="auto" />
+                            </Grid.ColumnDefinitions>
+                            <Border Name="PART_Border"
+                           BorderBrush="Black" BorderThickness="1"
+                           Padding="2"
+                          Grid.Row="1" Grid.Column="1"
+                           Width="{TemplateBinding Width}"
+                           Height="{TemplateBinding Height}"
+                           Background="#FFEFF1EB"
+                           HorizontalAlignment="Stretch"
+                           VerticalAlignment="Center" />
+
+                            <Track Name="PART_Track"
+                              HorizontalAlignment="Stretch"
+                              VerticalAlignment="Center"
+                              Grid.Row="1" Grid.Column="1"
+                              Width="{TemplateBinding Width}"
+                              Height="{TemplateBinding Height}">
+                                <Track.Thumb>
+                                    <Thumb Style="{StaticResource SliderThumbStyle3}" />
+                                </Track.Thumb>
+                            </Track>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+
+        <!-- -->
+
+        <Style x:Key="MyShapeStyle4" TargetType="Shape">
+            <Setter Property="Fill" Value="{DynamicResource MyFillBrush4}" />
+        </Style>
+
+        <Style x:Key="SliderThumbStyle4" TargetType="Thumb">
+            <Setter Property="SnapsToDevicePixels" Value="true"/>
+            <Setter Property="OverridesDefaultStyle" Value="false"/>
+            <Setter Property="Height" Value="18"/>
+            <Setter Property="Width" Value="18"/>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Thumb">
+
+                        <Rectangle Style="{StaticResource MyShapeStyle4}" Width="Auto"
+                          Stroke="Black"
+                          StrokeThickness="1.1"
+                          Name="Ellipse" 
+                          Margin="-17.5,0,-17.5,0"
+                        />
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="Ellipse" Property="Fill" Value="#FF42BD9C"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter TargetName="Ellipse" Property="Fill" Value="Gray"/>
+                            </Trigger>
+
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="Slider" x:Key="AppSliderStyle4">
+            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Slider">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="auto" Name="row" />
+                                <RowDefinition Height="auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto" />
+                                <ColumnDefinition Width="*" Name="column" />
+                                <ColumnDefinition Width="auto" />
+                            </Grid.ColumnDefinitions>
+                            <Border Name="PART_Border"
+                           BorderBrush="Black" BorderThickness="1"
+                           Padding="2"
+                          Grid.Row="1" Grid.Column="1"
+                           Width="{TemplateBinding Width}"
+                           Height="{TemplateBinding Height}"
+                           Background="#FFEFF1EB"
+                           HorizontalAlignment="Stretch"
+                           VerticalAlignment="Center" />
+
+                            <Track Name="PART_Track"
+                              HorizontalAlignment="Stretch"
+                              VerticalAlignment="Center"
+                              Grid.Row="1" Grid.Column="1"
+                              Width="{TemplateBinding Width}"
+                              Height="{TemplateBinding Height}">
+                                <Track.Thumb>
+                                    <Thumb Style="{StaticResource SliderThumbStyle4}" />
+                                </Track.Thumb>
+                            </Track>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- -->
+
+
+
+        <Style  TargetType="Button" x:Key="MyStyleButton">
+
+            <Setter Property="MaxWidth" Value="200" ></Setter>
+            <Setter Property="MaxHeight" Value="50"></Setter>
+            <Setter Property="MinWidth" Value="190"></Setter>
+            <Setter Property="MinHeight" Value="40"></Setter>
+            <Setter Property="FontSize" Value="20" ></Setter>
+            <Setter Property="FontStyle" Value="Normal" ></Setter>
+            <Setter Property="FontSize" Value="24" />
+            <Setter Property="FontFamily" Value="Cambria"/>
+            <Setter Property="FontStyle" Value="Normal" />
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="BorderThickness" Value="2.5"/>
+
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                        <GradientStop Color="#FF817D7D" Offset="0"/>
+                        <GradientStop Color="#FFA9A9C0" Offset="1"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style >
+        <Style  TargetType="{x:Type TextBlock}" x:Key="MyTextBlock">
+            <Setter Property="Foreground" Value="#FFE2DFDF"/>
+            <Setter Property="Foreground" Value="#FFE2DFDF"/>
+            <Setter Property="FontFamily" Value="TimesNewRoman"/>
+            <Setter Property="FontSize" Value="32"/>
+
+        </Style>
+
+    </Window.Resources>
+    <Window.Background>
+        <ImageBrush ImageSource="images/green_felt.jpg"/>
+    </Window.Background>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="45*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="155*"/>
+            <RowDefinition Height="107*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="43*"/>
+            <ColumnDefinition Width="84*"/>
+            <ColumnDefinition Width="33*"/>
+        </Grid.ColumnDefinitions>
+        <Button Style="{StaticResource ResourceKey=MyStyleButton}" Content="OK" HorizontalAlignment="Left" Margin="5,64,0,0" VerticalAlignment="Top" Width="190" Height="40" RenderTransformOrigin="0.5,0.5" Click="Button_Click_2" Grid.Row="5" Grid.Column="1"/>
+        <Button x:Name="FormIn" Style="{StaticResource MyStyleButton}" Content="Скасувати" HorizontalAlignment="Left" Margin="215,64,0,0" VerticalAlignment="Top" Width="190" Height="40" Click="Button_Click_1" Grid.Row="5" Grid.Column="1"/>
+
+        <DockPanel Grid.ColumnSpan="3" Grid.Row="0" >
+            <TextBlock Margin="10"  FontFamily = "TimesNewRoman" FontSize ="33"  Text="                               Налаштування " Background="#FFF0EEEE" Foreground="#FF0C0C0C"  ></TextBlock>
+
+        </DockPanel>
+
+        <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal" Grid.ColumnSpan="2">
+            <TextBlock x:Name="TextBlock1" Style="{StaticResource MyTextBlock}" Text="Пнд" Width="65" />
+            <TextBlock x:Name="TextBlock2" Style="{StaticResource MyTextBlock}" Margin="22,0,0,0" Text="Вт" Width="60" />
+            <TextBlock x:Name="TextBlock3" Style="{StaticResource MyTextBlock}" Margin="22,0,0,0" Text="Ср" Width="60" />
+            <TextBlock x:Name="TextBlock4" Style="{StaticResource MyTextBlock}" Margin="22,0,0,0"  Text="Чт" Width="60" />
+            <TextBlock x:Name="TextBlock5" Style="{StaticResource MyTextBlock}" Margin="22,0,0,0" Text="Птн" Width="72" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="4" Grid.Column="1" Orientation="Horizontal" Grid.ColumnSpan="2">
+            <Slider x:Name="slider1" Minimum="1" IsSnapToTickEnabled="True" TickFrequency="1" Value="5" Maximum="5" Style="{StaticResource AppSliderStyle}"   Margin="0,0,0,0"  Height="141"  Width="53" Orientation="Vertical" ValueChanged="Slider_ValueChanged" />
+            <Slider x:Name="slider2" Minimum="1" IsSnapToTickEnabled="True" TickFrequency="1" Value="5" Maximum="5" Style="{StaticResource AppSliderStyle1}"  Margin="30,0,0,0" Height="141"  Width="53" Orientation="Vertical" ValueChanged="Slider2_ValueChanged" />
+            <Slider x:Name="slider3" Minimum="1" IsSnapToTickEnabled="True" TickFrequency="1" Value="5" Maximum="5" Style="{StaticResource AppSliderStyle2}"  Margin="30,0,0,0" Height="141"  Width="53" Orientation="Vertical" ValueChanged="Slider3_ValueChanged" />
+            <Slider x:Name="slider4" Minimum="1" IsSnapToTickEnabled="True" TickFrequency="1" Value="5" Maximum="5" Style="{StaticResource AppSliderStyle3}"  Margin="30,0,0,0" Height="141"  Width="53" Orientation="Vertical" ValueChanged="Slider4_ValueChanged" />
+            <Slider x:Name="slider5" Minimum="1" IsSnapToTickEnabled="True" TickFrequency="1" Value="5" Maximum="5" Style="{StaticResource AppSliderStyle4}"  Margin="30,0,0,0" Height="141"  Width="53" Orientation="Vertical" ValueChanged="Slider5_ValueChanged" />
+
+        </StackPanel>
+        <ListView x:Name="ListView12" Foreground= "#FFE2DFDF" Grid.Row="4" Background="{x:Null}" FontSize="22" FontFamily="Times New Roman" BorderBrush="{x:Null}">
+        </ListView>
+        <StackPanel Grid.Column="1" Grid.Row ="2" Orientation="Horizontal" >
+            <Button x:Name="button1" Margin="0,0,0,0" Width="50" Click="Button_Click_7"/>
+            <Button x:Name="button2"  Margin="34,0,0,0" Width="50" Click="Button_Click_8" Height="35" VerticalAlignment="Top"/>
+            <Button x:Name="button3"  Margin="30,0,0,0" Width="50" Click="Button_Click_9" Height="35" VerticalAlignment="Top"/>
+            <Button x:Name="button4" Margin="30,0,0,0"  Width="50" Click="Button_Click_10"/>
+            <Button x:Name="button5" Margin="36,0,0,0"  Width="50" Click="Button_Click_11"/>
+
+        </StackPanel>
+
+    </Grid>
+</Window>
+    
+    
